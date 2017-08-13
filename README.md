@@ -1,6 +1,6 @@
 ## Plet
 
-Plet is a templet nesting package for Go. Plet wraps html/template and provides helper functions to make it easy to manage and use html/template.
+Plet is a simple template package for web apps. Plet wraps html/template and provides helper functions to make html/template easy to manage and use.
 
 ## Terminologies
 
@@ -9,7 +9,7 @@ __Content__: content templates is where you define the sections of your template
 
 ## Basic Usage
 
-__tmplt/layout/basic/basic.html__: layout template
+[tmplt/layout/basic/basic.html](https://github.com/steven-ferrer/plet/blob/master/examples/tmplt/layout/basic/basic.html): layout template
 
 	{{ define "basic" }}
 	<!DOCTYPE html>
@@ -25,7 +25,7 @@ __tmplt/layout/basic/basic.html__: layout template
 	</html>
 	{{ end }}
 
-__content/simple/content.html__: content template
+[tmplt/content/simple/content.html](https://github.com/steven-ferrer/plet/blob/master/examples/tmplt/content/simple/content.html): content template
 
 	{{ define "head" }}
 	<title>Plet | Template Management Package</title>
@@ -36,7 +36,7 @@ __content/simple/content.html__: content template
 	{{ end }}
 
 
-__basic.go__:
+[basic.go](https://github.com/steven-ferrer/plet/blob/master/examples/basic.go):
 
 	import (
 		"log"
@@ -67,6 +67,9 @@ __basic.go__:
 		}
 	}
 
+## More Examples
+
+For more examples please see [examples](https://github.com/steven-ferrer/plet/tree/master/examples) folder.
 
 ## Issues and Question
 
@@ -74,4 +77,4 @@ If you found a bug or have a question, please feel free to file an issue.
 
 ## Contributing
 
-Please feel free to contribute by openning an PR.
+Please feel free to contribute by openning a PR.
