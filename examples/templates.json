@@ -1,0 +1,18 @@
+{
+	"contents": [
+		{
+			"name": "simple",
+			"contentdir": "tmplt/content/simple",
+			"layoutdir" : "tmplt/layout/basic"
+        },
+        {
+			"name": "simple2",
+			"contentdir": "tmplt/content/simple2",
+			"layoutdir" : "tmplt/layout/basic"
+        },
+        {
+            "name": "nolayout",
+			"contentdir": "tmplt/content/nolayout"
+        }
+	]
+}

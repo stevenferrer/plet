@@ -1,0 +1,16 @@
+<!-- 
+	Note: Template name must match the folder name 
+-->
+{{ define "basic" }}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		{{ template "head" . }}
+	</head>
+	<body>
+		{{ template "content" . }}
+		</body>
+</html>
+{{ end }}
