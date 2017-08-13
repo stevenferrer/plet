@@ -23,6 +23,10 @@ func main() {
 
 	http.HandleFunc("/simple", func(w http.ResponseWriter, r *http.Request) {
 		t, err := tmplts.Get("simple")
+		if err != nil {
+			log.Fatal(err)
+		}
+
 		err = t.Execute(w, nil)
 		if err != nil {
 			log.Fatal(err)
@@ -31,6 +35,10 @@ func main() {
 
 	http.HandleFunc("/simple2", func(w http.ResponseWriter, r *http.Request) {
 		t, err := tmplts.Get("simple2")
+		if err != nil {
+			log.Fatal(err)
+		}
+
 		//executing templates is very familiar
 		err = t.Execute(w, struct{ Name string }{"John Doe"})
 		if err != nil {
@@ -41,6 +49,10 @@ func main() {
 	//it is also possible to use it without a layout template
 	http.HandleFunc("/nolayout", func(w http.ResponseWriter, r *http.Request) {
 		t, err := tmplts.Get("nolayout")
+		if err != nil {
+			log.Fatal(err)
+		}
+
 		//executing templates is very familiar
 		err = t.Execute(w, nil)
 		if err != nil {
@@ -57,6 +69,7 @@ func makeTemplates(contentsDir, layoutsDir string) *plet.Templates {
 	//contentsDir and layoutsDir should be relative
 	//to the executable program
 
+	//we're storing the template config into a json file
 	b, err := ioutil.ReadFile("templates.json")
 	if err != nil {
 		log.Fatalf("error reading templates.json: %v", err)
@@ -70,7 +83,11 @@ func makeTemplates(contentsDir, layoutsDir string) *plet.Templates {
 
 	tmplts := plet.NewTemplates()
 
-	//set to true on development, this will
+	//set to true on development, by default,
+	//once templates are initialized, they will
+	//not be re-compiled until you restart the server
+	//setting HotReload to true will re-compile the templates
+	//everytime Execute is called
 	tmplts.HotReload = true
 
 	for _, c := range contents.ContentTmplts {
