@@ -9,7 +9,7 @@ __Content__: content templates is where you define the sections of your template
 
 ## Basic Usage
 
-[tmplt/layout/basic/basic.html](https://github.com/steven-ferrer/plet/blob/master/examples/tmplt/layout/basic/basic.html): layout template
+[tmplt/layout/basic/basic.html](https://github.com/steven-ferrer/plet/blob/master/examples/tmplt/layout/basic/basic.html): layout template. Note that for layout templates, folder name must match the template declaration.
 
 	{{ define "basic" }}
 	<!DOCTYPE html>
