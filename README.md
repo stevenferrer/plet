@@ -1,6 +1,6 @@
 ## Plet
 
-Plet is a templet nesting package for Go. Plet wraps html/template and provides helper functions to make it easy to manage and use html/template.
+Plet is a simple template package for web apps. Plet wraps html/template and provides helper functions to make html/template easy to manage and use.
 
 ## Terminologies
 
