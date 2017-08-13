@@ -77,4 +77,4 @@ If you found a bug or have a question, please feel free to file an issue.
 
 ## Contributing
 
-Please feel free to contribute by openning an PR.
+Please feel free to contribute by openning a PR.
