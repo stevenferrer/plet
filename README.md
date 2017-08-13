@@ -9,7 +9,7 @@ __Content__: content templates is where you define the sections of your template
 
 ## Basic Usage
 
-__basic.html__: layout template
+__tmplt/layout/basic/basic.html__: layout template
 
 	{{ define "basic" }}
 	<!DOCTYPE html>
@@ -25,7 +25,7 @@ __basic.html__: layout template
 	</html>
 	{{ end }}
 
-__content.html__: content template
+__content/simple/content.html__: content template
 
 	{{ define "head" }}
 	<title>Plet | Template Management Package</title>
