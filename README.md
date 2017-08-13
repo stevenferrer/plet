@@ -67,6 +67,9 @@ __basic.go__:
 		}
 	}
 
+## More Examples
+
+For more examples please see __examples__ folder.
 
 ## Issues and Question
 
