@@ -129,7 +129,7 @@ func (t *Template) Init() error {
 		t.useLayout = true
 	}
 
-	contentFiles, err := GetFilesWithExt(t.ContentDir, t.Ext)
+	contentFiles, err := getFilesWithExt(t.ContentDir, t.Ext)
 	if err != nil {
 		return fmt.Errorf("error getting content files: %v", err)
 	}
@@ -160,7 +160,7 @@ func (l *layout) init(dir, ext string) error {
 	//get the directory name to be
 	l.name = filepath.Base(dir)
 
-	fileNames, err := GetFilesWithExt(dir, ext)
+	fileNames, err := getFilesWithExt(dir, ext)
 	if err != nil {
 		return fmt.Errorf("error getting files in directory %q: %v", dir, err)
 	}
@@ -187,8 +187,8 @@ func isDir(p string) (bool, error) {
 	return isDir, err
 }
 
-//GetFilesWithExt gets all files with a specific extention e.g. html
-func GetFilesWithExt(dir, ext string) ([]string, error) {
+//getFilesWithExt gets all files with a specific extention e.g. html
+func getFilesWithExt(dir, ext string) ([]string, error) {
 	var filenames []string
 
 	walkFn := func(path string, info os.FileInfo, err error) error {
