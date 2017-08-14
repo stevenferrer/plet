@@ -11,13 +11,25 @@ type Templates struct {
 
 //Add adds a template to the template map
 //if template is previously added, it will be overwritten
-func (tmplts *Templates) Add(name string, tmplt *Template) {
+func (tmplts *Templates) Add(tmplt *Template) error {
 	//match the hot reload to contained templates
 	//if hot reload is enabled
 	if tmplts.HotReload {
 		tmplt.HotReload = true
 	}
-	tmplts.templates[name] = tmplt
+
+	//initialize template if not yet initialized
+	if !tmplt.initialized {
+		err := tmplt.Init()
+		if err != nil {
+			return err
+		}
+	}
+
+	//use template name as map key
+	tmplts.templates[tmplt.name] = tmplt
+
+	return nil
 }
 
 //Get returns the template given a name

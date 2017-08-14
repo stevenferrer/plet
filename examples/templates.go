@@ -92,7 +92,7 @@ func makeTemplates(contentsDir, layoutsDir string) *plet.Templates {
 
 	for _, c := range contents.ContentTmplts {
 		t := plet.New(c.ContentDir, c.LayoutDir)
-		tmplts.Add(c.Name, &t)
+		tmplts.Add(&t)
 	}
 
 	//init all templates to make sure everything is fine
@@ -109,7 +109,7 @@ type tmpltCfg struct {
 }
 
 type contentTmplts struct {
-	Name       string `json:"name"`
+	//Name       string `json:"name"`
 	ContentDir string `json:"contentdir"`
 	LayoutDir  string `json:"layoutdir"`
 }

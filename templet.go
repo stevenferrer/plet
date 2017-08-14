@@ -26,9 +26,11 @@ func NewBasic() Template {
 
 //New returns a template using the provided layout and content directory
 func New(contentDir, layoutDir string) Template {
+	name := filepath.Base(contentDir)
 	return Template{
 		LayoutDir:  layoutDir,
 		ContentDir: contentDir,
+		name:       name,
 	}
 }
 
@@ -66,6 +68,9 @@ type Template struct {
 	HotReload bool
 
 	once sync.Once
+
+	//template name (base directory of template files)
+	name string
 }
 
 //TODO: Just panic instead of returning an error?
@@ -105,6 +110,8 @@ func (t *Template) Execute(wr io.Writer, data interface{}) (err error) {
 // But it is strongly suggested that you initialize it before everyting else since
 // so that it can be verified if the template files exists
 func (t *Template) Init() error {
+
+	t.name = filepath.Base(t.ContentDir)
 
 	//ContentDir should be a directory
 	aDir, err := isDir(t.ContentDir)

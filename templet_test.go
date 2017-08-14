@@ -28,7 +28,7 @@ func TestNewTemplates(t *testing.T) {
 		ContentDir: "path/to/file",
 	}
 
-	tmplts.Add("test", tmplt)
+	tmplts.Add(tmplt)
 	err := tmplts.Init()
 	if err == nil {
 		t.Errorf("expecting error to be non-nil")
@@ -54,13 +54,17 @@ func TestTemplatesHotReload(t *testing.T) {
 	tmplt := New(contentDir+"simple", layoutDir+"basic")
 	tmplts.HotReload = true
 
-	tmplts.Add("test", &tmplt)
-	err := tmplts.Init()
+	err := tmplts.Add(&tmplt)
+	if err != nil {
+		t.Errorf("error adding template: ", err)
+	}
+
+	err = tmplts.Init()
 	if err != nil {
 		t.Errorf("%v", err)
 	}
 
-	tmplt2, err := tmplts.Get("test")
+	tmplt2, err := tmplts.Get("simple")
 	if err != nil {
 		t.Errorf("Not expecting error\n")
 	}
