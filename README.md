@@ -9,6 +9,8 @@ __Content__: content templates is where you define the sections of your template
 
 ## Basic Usage
 
+### layout template
+
 [tmplt/layout/basic/basic.html](https://github.com/steven-ferrer/plet/blob/master/examples/tmplt/layout/basic/basic.html): layout template. Note that for layout templates, folder name must match the template declaration.
 
 	{{ define "basic" }}
@@ -24,16 +26,27 @@ __Content__: content templates is where you define the sections of your template
 			</body>
 	</html>
 	{{ end }}
-
-[tmplt/content/simple/content.html](https://github.com/steven-ferrer/plet/blob/master/examples/tmplt/content/simple/content.html): content template
-
+	
+### content templates
+	
+[tmplt/content/simple/head.html](https://github.com/steven-ferrer/plet/blob/master/examples/tmplt/content/simple/head.html)
+	
 	{{ define "head" }}
 	<title>Plet | Template Management Package</title>
 	{{ end }}
 
+
+[tmplt/content/simple/content.html](https://github.com/steven-ferrer/plet/blob/master/examples/tmplt/content/simple/content.html)
+
 	{{ define "content" }}
 	<h1>Hello World!</h1>
 	{{ end }}
+
+[tmplt/content/simple/foot.html](https://github.com/steven-ferrer/plet/blob/master/examples/tmplt/content/simple/foot.html)
+
+	{{ define "foot" }}
+	<p>Hello, I'm a footer!</p>
+	{{end}}
 
 
 [basic.go](https://github.com/steven-ferrer/plet/blob/master/examples/basic.go):
