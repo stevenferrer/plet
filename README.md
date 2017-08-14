@@ -23,7 +23,9 @@ __Content__: content templates is where you define the sections of your template
 		</head>
 		<body>
 			{{ template "content" . }}
-			</body>
+			
+			{{ template "foot" . }}
+		</body>
 	</html>
 	{{ end }}
 	
