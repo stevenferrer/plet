@@ -68,7 +68,7 @@ __Content__: content templates is where you define the sections of your template
 	//very simple example of using plet package
 	func main() {
 		//new template
-		t := plet.New(layoutDir+"basic", contentDir+"simple")
+		t := plet.New(contentDir+"simple", layoutDir+"basic")
 		
 		//initialize template, this will compile the template
 		err := t.Init()
