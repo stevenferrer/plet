@@ -22,6 +22,8 @@ func main() {
 	tmplts := makeTemplates(contentDir, layoutDir)
 
 	http.HandleFunc("/simple", func(w http.ResponseWriter, r *http.Request) {
+		//use the base directory name of 
+		//content dir to get the content template
 		t, err := tmplts.Get("simple")
 		if err != nil {
 			log.Fatal(err)
@@ -34,6 +36,8 @@ func main() {
 	})
 
 	http.HandleFunc("/simple2", func(w http.ResponseWriter, r *http.Request) {
+		//use the base directory name of 
+		//content dir to get the content template
 		t, err := tmplts.Get("simple2")
 		if err != nil {
 			log.Fatal(err)
@@ -48,6 +52,8 @@ func main() {
 
 	//it is also possible to use it without a layout template
 	http.HandleFunc("/nolayout", func(w http.ResponseWriter, r *http.Request) {
+		//use the base directory name of 
+		//content dir to get the content template
 		t, err := tmplts.Get("nolayout")
 		if err != nil {
 			log.Fatal(err)
@@ -92,6 +98,8 @@ func makeTemplates(contentsDir, layoutsDir string) *plet.Templates {
 
 	for _, c := range contents.ContentTmplts {
 		t := plet.New(c.ContentDir, c.LayoutDir)
+		//templates.Add uses the base directory of
+		//the ContentDir as map key
 		tmplts.Add(&t)
 	}
 
