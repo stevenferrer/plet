@@ -1,10 +1,11 @@
 ## Plet
 
-Plet is a simple template package for web apps. Plet wraps html/template and provides helper functions to make html/template easy to manage and use.
+Plet is a simple template package for web apps. Plet wraps `html/template` and provides helper functions.
 
 ## Terminologies
 
 __Layout__: layout templates serves as base for content templates. 
+
 __Content__: content templates is where you define the sections of your templates.
 
 ## Basic Usage
@@ -92,4 +93,4 @@ If you found a bug or have a question, please feel free to submit an issue.
 
 ## Contributing
 
-Please feel free to contribute by openning a PR.
+Please feel free to contribute by submitting a PR.
