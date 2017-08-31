@@ -89,7 +89,7 @@ For more examples please see [examples](https://github.com/steven-ferrer/plet/tr
 
 ## Issues and Question
 
-If you found a bug or have a question, please feel free to submit an issue.
+If you found a bug or have a question, please feel free to open an issue.
 
 ## Contributing
 
