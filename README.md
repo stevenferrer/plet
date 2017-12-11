@@ -14,21 +14,23 @@ __Content__: content templates is where you define the sections of your template
 
 [tmplt/layout/basic/basic.html](https://github.com/steven-ferrer/plet/blob/master/examples/tmplt/layout/basic/basic.html): layout template. Note that for layout templates, folder name must match the template declaration.
 
-	{{ define "basic" }}
-	<!DOCTYPE html>
-	<html lang="en">
-		<head>
-			<meta charset="UTF-8">
-			<meta name="viewport" content="width=device-width, initial-scale=1">
-			{{ template "head" . }}
-		</head>
-		<body>
-			{{ template "content" . }}
-			
-			{{ template "foot" . }}
-		</body>
-	</html>
-	{{ end }}
+```html
+{{ define "basic" }}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		{{ template "head" . }}
+	</head>
+	<body>
+		{{ template "content" . }}
+
+		{{ template "foot" . }}
+	</body>
+</html>
+{{ end }}
+```
 	
 ### content templates
 	
@@ -41,47 +43,53 @@ __Content__: content templates is where you define the sections of your template
 
 [tmplt/content/simple/content.html](https://github.com/steven-ferrer/plet/blob/master/examples/tmplt/content/simple/content.html)
 
-	{{ define "content" }}
-	<h1>Hello World!</h1>
-	{{ end }}
+```html
+{{ define "content" }}
+<h1>Hello World!</h1>
+{{ end }}
+```
 
 [tmplt/content/simple/foot.html](https://github.com/steven-ferrer/plet/blob/master/examples/tmplt/content/simple/foot.html)
 
-	{{ define "foot" }}
-	<p>Hello, I'm a footer!</p>
-	{{end}}
+```html
+{{ define "foot" }}
+<p>Hello, I'm a footer!</p>
+{{end}}
+```
 
 
 [basic.go](https://github.com/steven-ferrer/plet/blob/master/examples/basic.go):
 
-	import (
-		"log"
-		"os"
+```go
+import (
+	"log"
+	"os"
 
-		"github.com/steven-ferrer/plet"
-	)
+	"github.com/steven-ferrer/plet"
+)
 
-	const (
-		contentDir = "tmplt/content/"
-		layoutDir  = "tmplt/layout/"
-	)
+const (
+	contentDir = "tmplt/content/"
+	layoutDir  = "tmplt/layout/"
+)
 
-	//very simple example of using plet package
-	func main() {
-		//new template
-		t := plet.New(contentDir+"simple", layoutDir+"basic")
-		
-		//initialize template, this will compile the template
-		err := t.Init()
-		if err != nil {
-			log.Fatal(err)
-		}
+//very simple example of using plet package
+func main() {
+	//new template
+	t := plet.New(contentDir+"simple", layoutDir+"basic")
 
-		err = t.Execute(os.Stdout, nil)
-		if err != nil {
-			log.Fatal(err)
-		}
+	//initialize template, this will compile the template
+	err := t.Init()
+	if err != nil {
+		log.Fatal(err)
 	}
+
+	err = t.Execute(os.Stdout, nil)
+	if err != nil {
+		log.Fatal(err)
+	}
+}
+```
 
 ## More Examples
 
