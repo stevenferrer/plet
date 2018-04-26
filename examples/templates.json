@@ -1,15 +1,15 @@
 {
-	"contents": [
-		{
-			"contentdir": "tmplt/content/simple",
-			"layoutdir" : "tmplt/layout/basic"
+    "contents":[
+        {
+            "contentdir":"tmplt/content/simple",
+            "layoutdir":"tmplt/layout/basic"
         },
         {
-			"contentdir": "tmplt/content/simple2",
-			"layoutdir" : "tmplt/layout/basic"
+            "contentdir":"tmplt/content/simple2",
+            "layoutdir":"tmplt/layout/basic"
         },
         {
-			"contentdir": "tmplt/content/nolayout"
+            "contentdir":"tmplt/content/nolayout"
         }
-	]
+    ]
 }
