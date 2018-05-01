@@ -56,7 +56,7 @@ func TestTemplatesHotReload(t *testing.T) {
 
 	err := tmplts.Add(&tmplt)
 	if err != nil {
-		t.Errorf("error adding template: ", err)
+		t.Errorf("error adding template: %s", err)
 	}
 
 	err = tmplts.Init()

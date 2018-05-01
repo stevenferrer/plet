@@ -107,7 +107,7 @@ func (t *Template) Execute(wr io.Writer, data interface{}) (err error) {
 // layoutDir: is the directory of layout templates
 // ext: is for file extension (e.g. .html, .txt etc.) .html is used if ext is empty
 // Note: if you even forgot to call Init, it will be called when you call Execute
-// But it is strongly suggested that you initialize it before everyting else since
+// But it is strongly suggested that you initialize it before everything else since
 // so that it can be verified if the template files exists
 func (t *Template) Init() error {
 
@@ -194,7 +194,7 @@ func isDir(p string) (bool, error) {
 	return isDir, err
 }
 
-//getFilesWithExt gets all files with a specific extention e.g. html
+//getFilesWithExt gets all files with a specific extension e.g. html
 func getFilesWithExt(dir, ext string) ([]string, error) {
 	var filenames []string
 
