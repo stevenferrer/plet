@@ -1,3 +1,5 @@
+[![Go Report Card](https://goreportcard.com/badge/github.com/steven-ferrer/plet)](https://goreportcard.com/report/github.com/steven-ferrer/plet) [![godocs](https://godoc.org/github.com/steven-ferrer/plet?status.svg)](https://godoc.org/github.com/steven-ferrer/plet) 
+
 ## Plet
 
 Plet is a simple template package for web apps. Plet wraps `html/template` and provides helper functions.
